@@ -6,16 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('pull') {
+    stage('build') {
       steps {
-        git(url: 'https://github.com/Mahdi-Aali/jenkins-build-dotnet-api', branch: 'master')
-        sh 'git pull'
-      }
-    }
-
-    stage('restore') {
-      steps {
-        sh 'dotnet restore'
+        sh 'dotnet build'
       }
     }
 
